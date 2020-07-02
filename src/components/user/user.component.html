@@ -1,0 +1,52 @@
+<div>
+  <span><strong>{{user.id}}</strong> - {{user.name}} - {{user.username}}</span>
+  <button type="button" (click)="showPosts(user.id)">Show posts</button>
+  <div *ngIf="isPostOpen" class="post">
+    <div *ngFor="let p of posts; let i = index">
+      <h2>Post {{i+1}}: {{p.title}}</h2>
+      <p><strong>Post:</strong> {{p.body}}</p>
+      <button type="button" (click)="showComments(p.id)">Show comments</button>
+      <div *ngFor="let c of comments; let i = index">
+        <div *ngIf="p.id === c.postId && isCommentOpen" class="comment">
+          <hr>
+          <h3>Comment {{i+1}}: {{c.name}}</h3>
+          <p><strong>Comment:</strong> {{c.body}}</p>
+          <p><strong>Email</strong>: {{c.email}}</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <hr>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--<div>-->
+<!--    <span>{{user.id}} - {{user.name}} - {{user.username}}</span>-->
+<!--    <button type="button" (click)="showPosts(user.id)">Show posts</button>-->
+
+<!--    <ul>-->
+<!--      <li *ngFor="let p of posts; let i = index">-->
+<!--        <h2>Post {{i+1}}: {{p.title}}</h2>-->
+<!--        <p>Post: {{p.body}}</p>-->
+<!--        <button type="button" (click)="showComments(p.id)">Show comments</button>-->
+<!--        <ul>-->
+<!--          <li *ngFor="let c of comments; let i = index">-->
+<!--            <h3>Comment {{i+1}}: {{c.name}}</h3>-->
+<!--            <p>Comment: {{c.body}}</p>-->
+<!--            <p>Email: {{c.email}}</p>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  <hr>-->
+<!--</div>-->
