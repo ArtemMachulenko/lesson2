@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+button {
+  margin-left: 1rem;
+}
+
+.post {
+  margin-left: 3rem;
+}
+
+.comment {
+  margin-left: 3rem;
+}
